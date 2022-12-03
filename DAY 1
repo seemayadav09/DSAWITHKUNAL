@@ -1,0 +1,27 @@
+after compilation each individual class is converted into a .class file which is known as byte code.
+JVM(Java virtual machine) is used to run the byte code
+Whitespace, including spaces and newlines, between statements is ignored.
+In Java, a statement is a line of code that executes a task and is terminated with a ;
+
+
+// Creating a String variable
+String name = "Bob";
+
+// The following will print "false" because strings are case-sensitive
+System.out.println(name.equals("bob"));
+
+int age = 28; 
+
+char grade = 'A';
+
+boolean late = true;
+
+byte b = 20;
+
+long num1 = 1234567;
+
+short no = 10;
+
+float k = (float)12.5;
+
+double pi = 3.14;
