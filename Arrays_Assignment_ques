@@ -103,3 +103,104 @@ class Solution {
         
     
 }
+ques 6
+https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/ 
+import java.util.ArrayList;
+class Solution {
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        // Initialize maximum element 
+        
+         int max = candies[0]; 
+         // Traverse array elem to find the highest number  
+         for (int i = 1; i < candies.length; i++) 
+             if (candies[i] > max) 
+                 max = candies[i]; 
+        //Initialize output list
+        List<Boolean> output = new ArrayList<>(); 
+        //Loop through each elem to set output[i] to true or false, depending on the sum of candies[i] and extraCandies
+        for(int i =0; i<candies.length; i++){
+            if(candies[i]+extraCandies<max){
+                output.add(false);
+            }else{
+                output.add(true);
+            }
+        }
+        //finally, return the output list
+        return output;
+        
+   
+
+
+
+
+
+
+        
+        ArrayList<Boolean>list=new ArrayList<>();
+        for(int i=0;i<candies.length;i++){
+            if(candies[i]+extraCandies>=max(candies)){
+                list.add(true);
+            }else{
+                list.add(false);
+            }
+
+            
+        }
+        return list;
+        
+    }
+
+    public int max(int[] candies){
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<candies.length;i++){
+            if(candies[i]>max){
+                max=candies[i];
+            }
+        
+        }
+        return max;
+    
+    }
+}
+ques7
+https://leetcode.com/problems/number-of-good-pairs/ 
+class Solution {
+    public int numIdenticalPairs(int[] nums) {
+        int count=0;
+        for(int i=0;i<nums.length;i++){
+            for(int j=i+1;j<nums.length;j++){
+                if (nums[i]==nums[j]){
+                    count++;
+                }
+
+            }
+        }
+        return count;
+    }
+}
+
+ques8
+https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/ 
+import java.util.Arrays;
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+        int[] list=new int[nums.length];
+
+        for(int i=0;i<nums.length;i++){
+            int count=0;
+            
+            for(int j=0;j<nums.length;j++){
+                if(nums[i]>nums[j]){
+                    count++;
+
+
+                }
+
+
+            }
+            list[i]=count;
+        }
+        return (list);
+
+    }
+}
