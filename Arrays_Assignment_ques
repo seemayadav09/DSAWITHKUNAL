@@ -54,3 +54,52 @@ class Solution {
         
     }
 }
+
+ques 4
+https://leetcode.com/problems/richest-customer-wealth/ 
+
+class Solution {
+    public int maximumWealth(int[][] accounts) {
+        int[] wealth=new int[accounts.length];
+        
+        int maxwealth=0;
+        for(int i=0;i<accounts.length;i++){
+            int sum=0;
+            
+            for(int j=0;j<accounts[i].length;j++){
+                sum=sum+accounts[i][j];
+            }
+            wealth[i]=sum;
+            if(wealth[i]>maxwealth){
+                maxwealth=wealth[i];
+
+            }
+            
+        }
+    }
+}
+
+ques 5
+https://leetcode.com/problems/shuffle-the-array/ 
+
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        
+        // Rotate the element to the left
+        for (int i = 0, q = 1, k = n; i < n; i++, k++, q++){
+            for (int j = k; j > i + q; j--) {
+                // swap a[j-1], a[j]
+                int temp = nums[j - 1];
+                nums[j - 1] = nums[j];
+                nums[j] = temp;
+            }
+        }
+        return nums;
+        
+            
+    
+
+    }
+        
+    
+}
