@@ -106,7 +106,7 @@ class Solution {
         
     
 }
-ques 6
+ques 6   //good one
 https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/ 
 import java.util.ArrayList;
 class Solution {
@@ -123,7 +123,7 @@ class Solution {
         //Loop through each elem to set output[i] to true or false, depending on the sum of candies[i] and extraCandies
         for(int i =0; i<candies.length; i++){
             if(candies[i]+extraCandies<max){
-                output.add(false);
+                output.add(false);  //adding true and false in list
             }else{
                 output.add(true);
             }
