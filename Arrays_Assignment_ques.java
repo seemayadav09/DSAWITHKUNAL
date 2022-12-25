@@ -220,7 +220,7 @@ for (int i = 0; i < nums.length; i++) {
     return ans;
     
     
-ques 10
+ques 10 good one
     
  class Solution {
     public boolean checkIfPangram(String sentence) {
