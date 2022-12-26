@@ -246,6 +246,107 @@ ques 10 good one
     }
 }
    
-}    
+}
+
+ques 11
+ https://leetcode.com/problems/count-items-matching-a-rule/    
+ import java.util.ArrayList;
+class Solution {
+    public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+        
+        int count = 0;
+        // loop through the items
+        for(List<String> list : items) {
+            if(ruleKey.equals("type") && ruleValue.equals(list.get(0))) count++;
+            else if(ruleKey.equals("color") && ruleValue.equals(list.get(1))) count++;
+            else if(ruleKey.equals("name") && ruleValue.equals(list.get(2))) count++;
+        }
+        return count;
+    }
+}
+
+ques 12
+https://leetcode.com/problems/find-the-highest-altitude/     
+ class Solution {
+    public int largestAltitude(int[] gain) {
+        int[] altitudes=new int[gain.length+1];
+        altitudes[0]=0;
+        altitudes[1]=gain[0];
+        for(int i=1;i<gain.length;i++){
+            altitudes[i+1]=gain[i]+altitudes[i];
+        }
+        return maxele(altitudes);
+
+
+        
+        
+    }
+    public int maxele(int[] altitudes){
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<altitudes.length;i++){
+            if(altitudes[i]>max){
+                max=altitudes[i];
+            }
+            
+            
+        }
+        return max;
+    }
+}   
+        
+           
+
+ques 13
+https://leetcode.com/problems/flipping-an-image/    
+class Solution {
+    public int[][] flipAndInvertImage(int[][] image) {
+        for (int i = 0; i < image.length; i++) {
+  
+        // Initialise start and end index
+            int start = 0;
+            int end = image[i].length - 1;
+    
+            // Till start < end, swap the element
+            // at start and end index
+            while (start < end) {
+    
+                // Swap the element
+                int temp =image[i][start];
+                image[i][start] = image[i][end];
+                image[i][end] = temp;
+    
+                // Increment start and decrement
+                // end for next pair of swapping
+                start++;
+                end--;
+            }
+        }    
+        for(int i=0;i<image.length;i++){
+            for(int j=0;j<image[i].length;j++){
+                //image[i][j]=image[i][(image[i].length)-1-j];
+                if (image[i][j]==1){
+                    image[i][j]=0;
+
+
+
+                    
+                }else{
+                    image[i][j]=1;
+
+                }
+                
+
+            }
+        }
+        return image;
+        
+        
+    }
+   
+    
+}                
+
+    
+
     
     
